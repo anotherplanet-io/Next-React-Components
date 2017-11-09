@@ -1,0 +1,29 @@
+{
+  "name": "@ap/ap-layout-grid",
+  "version": "1.0.0",
+  "description": "column grid layout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anotherplanet-io/Next-React-Components.git"
+  },
+  "keywords": [
+    "column",
+    "grid",
+    "layout",
+    "css",
+    "js",
+    "react",
+    "next"
+  ],
+  "author": "Thierry Charbonnel",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/anotherplanet-io/Next-React-Components/issues"
+  },
+  "homepage": "https://github.com/anotherplanet-io/Next-React-Components#readme",
+  "dependencies": {}
+}
