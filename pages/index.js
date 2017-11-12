@@ -17,6 +17,11 @@ class index extends Component {
               <h1>Another Planet Next React Components</h1>
             </Cell>
           </Row>
+          <Row>
+            <Cell phone={4} tablet={8} desktop={12}>
+              <p>Version 1.0.0</p>
+            </Cell>
+          </Row>
         </Container>
         <Container>
           <Row>
