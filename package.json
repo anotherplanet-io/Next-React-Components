@@ -9,7 +9,8 @@
     "start": "next start",
     "test": "ava",
     "lint": "standard 'packages/**/*.js' 'pages/**/*.js'",
-    "fix": "standard --fix 'packages/**/*.js' 'pages/**/*.js'"
+    "fix": "standard --fix 'packages/**/*.js' 'pages/**/*.js'",
+    "deploy": "next build && next export && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "repository": {
     "type": "git",
