@@ -30,7 +30,6 @@ export default class Container extends Component {
 
           div { /* phone */
             margin: 0;
-            background-color: blue;
             padding: ${g.phone.margin}px;
             ${maxWidthString}
             ${alignString}
@@ -39,14 +38,12 @@ export default class Container extends Component {
           /* tablet */
           @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) { /* desktop */
             div {
-              background-color: green;
               padding: ${g.tablet.margin}px;
             }
           }
 
           @media (min-width: ${g.desktop.breakpoints}px) { /* desktop */
             div {
-              background-color: red;
               padding: ${g.desktop.margin}px;
             }
           }

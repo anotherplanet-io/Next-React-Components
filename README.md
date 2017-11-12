@@ -1,5 +1,7 @@
 # Next-React-Components
 
+This project is inspired by Bootstrap, Material design and more.
+
 [Next](https://github.com/zeit/next.js) [React](https://github.com/facebook/react) Components
 100% JS and JSX
 
@@ -83,18 +85,18 @@ Centered by default
 
 ### Phone
 
-- margin: 16px
-- gutter: 16px
+- Margin: 16px
+- Gutter: 16px
 - Columns grid: 4
 - Default span: 4
 
 ### Tablet
 
-- margin: 16px
-- gutter: 16px
+- Margin: 16px
+- Gutter: 16px
 - Columns grid : 8
 - Default span: 4
-- breakpoints: 480px
+- Breakpoints: 480px
 
 ### Desktop
 

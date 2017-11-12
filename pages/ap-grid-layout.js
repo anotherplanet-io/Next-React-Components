@@ -10,29 +10,24 @@ class index extends Component {
   render () {
     return (
       <div>
-        <Container>
+        <Container maxWidth={'1024px'}>
           <Row>
-            <Cell>
-              Hello World
-            </Cell>
-            <Cell>
-              Col 2
-            </Cell>
-            <Cell>
-              Col 3
+            <Cell phone={4} tablet={8} desktop={12}>
+              <h1>Layout Grid</h1>
+              <p>Grid of default wide (4 columns) items</p>
             </Cell>
           </Row>
         </Container>
         <Container>
           <Row>
-            <Cell style={{ backgroundColor: 'teal' }}>
-              <h1>Hello World</h1>
+            <Cell className={'demo'}>
+              Col span 4
             </Cell>
-            <Cell>
-              Col 2
+            <Cell className={'demo'}>
+              Col span 4
             </Cell>
-            <Cell>
-              Col 3
+            <Cell className={'demo'}>
+              Col span 4
             </Cell>
           </Row>
         </Container>
@@ -41,7 +36,7 @@ class index extends Component {
             <Cell>
               Hello World { this.props.userAgent }
             </Cell>
-            <Cell phone={4} tablet={8} desktop={12}>
+            <Cell>
               Hello World { this.props.userAgent }
             </Cell>
             <Cell>
@@ -51,10 +46,10 @@ class index extends Component {
         </Container>
         <Container maxWidth={'1024px'}>
           <Row>
-            <Cell desktop={12}>
+            <Cell>
               Hello World { this.props.userAgent }
             </Cell>
-            <Cell phone={4} tablet={8} desktop={12}>
+            <Cell>
               Hello World { this.props.userAgent }
             </Cell>
             <Cell>
@@ -67,7 +62,7 @@ class index extends Component {
             <Cell>
               Hello World { this.props.userAgent }
             </Cell>
-            <Cell phone={4} tablet={8} desktop={12}>
+            <Cell>
               Hello World { this.props.userAgent }
             </Cell>
             <Cell>
@@ -75,6 +70,12 @@ class index extends Component {
             </Cell>
           </Row>
         </Container>
+        <style jsx>{`
+          .demo {
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+
+        `}</style>
       </div>
     )
   }

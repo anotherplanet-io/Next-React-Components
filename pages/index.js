@@ -13,17 +13,27 @@ class index extends Component {
       <div>
         <Container>
           <Row>
+            <Cell phone={4} tablet={8} desktop={12}>
+              <h1>Another Planet Next React Components</h1>
+            </Cell>
+          </Row>
+        </Container>
+        <Container>
+          <Row>
             <Cell>
-              Hello World
+              Components
             </Cell>
             <Cell>
               <Link href={'ap-grid-layout'}><a>AP Grid Layout</a></Link>
             </Cell>
-            <Cell>
-              Col 3
-            </Cell>
           </Row>
         </Container>
+        <style jsx>{`
+          h1 {
+            text-align: center;
+          }
+
+        `}</style>
       </div>
     )
   }

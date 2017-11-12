@@ -14,11 +14,10 @@ export default ({children, grid = {}, ...props}) => {
           flex-flow: row wrap;
           align-items: stretch;
           margin: ${(g.phone.margin / 2 * -1)}px;
-          border: 1px solid #000;
         }
 
         /* tablet */
-        @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) { /* desktop */
+        @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) {
           div {
             margin: ${(g.tablet.margin / 2 * -1)}px;
           }
@@ -40,7 +39,7 @@ export default ({children, grid = {}, ...props}) => {
           }
 
           /* tablet */
-          @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) { /* desktop */
+          @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) {
             div {
               grid-gap: ${g.tablet.gutter}px;
               grid-template-columns: repeat(${g.tablet.columns}, minmax(0, 1fr));

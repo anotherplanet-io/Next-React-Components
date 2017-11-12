@@ -1,11 +1,12 @@
 {
   "name": "next-react-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Next React Components CSS and JS",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "test": "ava",
     "lint": "standard 'packages/**/*.js' 'pages/**/*.js'",
