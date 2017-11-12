@@ -1,38 +1,57 @@
-import variables from './variables'
+import React, { Component } from 'react'
+import merge from 'deepmerge'
+import theme from './default-theme'
 
-export default ({children, grid = {}, ...props}) => {
-  const g = Object.assign({}, variables, grid);
-  return (
-    <div {...props}>
-      {children}
-      <style global jsx>{`
-        body {
-          margin: 0;
-        }
-      `}</style>
-      <style jsx>{`
-
-        div { /* phone */
-          margin: 0;
-          background-color: blue;
-          padding: ${g.phone.margin}px;
-        }
-
-        /* tablet */
-        @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) { /* desktop */
-          div {
-            background-color: green;
-            padding: ${g.tablet.margin}px;
+export default class Container extends Component {
+  render () {
+    const {children = {}, grid = {}, maxWidth = null, align = null, ...props} = this.props
+    const g = merge(theme, grid)
+    const maxWidthString = (maxWidth !== null) ? `max-width: ${maxWidth};` : ''
+    let alignString
+    switch (align) {
+      case 'left':
+        alignString = 'margin: 0 auto 0 0;'
+        break
+      case 'right':
+        alignString = 'margin: 0 0 0 auto;'
+        break
+      default:
+        alignString = 'margin: 0 auto;'
+    }
+    return (
+      <div {...props}>
+        {children}
+        <style global jsx>{`
+          body {
+            margin: 0;
           }
-        }
+        `}</style>
+        <style jsx>{`
 
-        @media (min-width: ${g.desktop.breakpoints}px) { /* desktop */
-          div {
-            background-color: red;
-            padding: ${g.desktop.margin}px;
+          div { /* phone */
+            margin: 0;
+            background-color: blue;
+            padding: ${g.phone.margin}px;
+            ${maxWidthString}
+            ${alignString}
           }
-        }
-      `}</style>
-    </div>
-  );
+
+          /* tablet */
+          @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) { /* desktop */
+            div {
+              background-color: green;
+              padding: ${g.tablet.margin}px;
+            }
+          }
+
+          @media (min-width: ${g.desktop.breakpoints}px) { /* desktop */
+            div {
+              background-color: red;
+              padding: ${g.desktop.margin}px;
+            }
+          }
+        `}</style>
+      </div>
+    )
+  }
 }

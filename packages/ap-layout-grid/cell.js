@@ -1,7 +1,11 @@
-import variables from './variables'
+import merge from 'deepmerge'
+import defaultTheme from './default-theme'
 
-export default ({children, grid = {},...props}) => {
-  const g = Object.assign({}, variables, grid);
+export default ({children = {}, theme = {}, phone = null, tablet = null, desktop = null, ...props}) => {
+  const g = merge(defaultTheme, theme)
+  if (phone !== null) g.phone.span = phone
+  if (tablet !== null) g.tablet.span = tablet
+  if (desktop !== null) g.desktop.span = desktop
   return (
     <div {...props}>
       {children}
@@ -10,12 +14,12 @@ export default ({children, grid = {},...props}) => {
         /* phone */
         div {
           width: calc(33.33333% - ${g.phone.gutter}px);
-          margin: ${ (g.phone.margin / 2) }px;
+          margin: ${(g.phone.margin / 2)}px;
           box-sizing: border-box;
         }
 
         @supports(display: grid) {
-          
+
           div {
             margin: 0;
             width: auto;
@@ -23,7 +27,7 @@ export default ({children, grid = {},...props}) => {
           }
 
           /* tablet */
-          @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) { /* desktop */
+          @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) {
             div {
               grid-column-end: span ${g.tablet.span};
             }
@@ -39,5 +43,5 @@ export default ({children, grid = {},...props}) => {
 
       `}</style>
     </div>
-  );
+  )
 }

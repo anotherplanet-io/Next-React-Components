@@ -1,7 +1,8 @@
-import variables from './variables'
+import theme from './default-theme'
+import merge from 'deepmerge'
 
 export default ({children, grid = {}, ...props}) => {
-  const g = Object.assign({}, variables, grid);
+  const g = merge(theme, grid)
   return (
     <div {...props}>
       {children}
@@ -12,20 +13,21 @@ export default ({children, grid = {}, ...props}) => {
           display: flex;
           flex-flow: row wrap;
           align-items: stretch;
-          margin: ${ (g.phone.margin / 2 * -1) }px;
+          margin: ${(g.phone.margin / 2 * -1)}px;
+          border: 1px solid #000;
         }
 
         /* tablet */
         @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) { /* desktop */
           div {
-            margin: ${ (g.tablet.margin / 2 * -1) }px;
+            margin: ${(g.tablet.margin / 2 * -1)}px;
           }
         }
 
         /* desktop */
         @media (min-width: ${g.desktop.breakpoints}px) {
           div {
-            margin: ${ (g.desktop.margin / 2 * -1) }px;
+            margin: ${(g.desktop.margin / 2 * -1)}px;
           }
         }
 
@@ -56,5 +58,5 @@ export default ({children, grid = {}, ...props}) => {
 
       `}</style>
     </div>
-  );
+  )
 }

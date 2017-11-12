@@ -25,5 +25,7 @@
     "url": "https://github.com/anotherplanet-io/Next-React-Components/issues"
   },
   "homepage": "https://github.com/anotherplanet-io/Next-React-Components#readme",
-  "dependencies": {}
+  "dependencies": {
+    "deepmerge": "^2.0.1"
+  }
 }

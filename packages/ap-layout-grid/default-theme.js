@@ -6,7 +6,7 @@ export default {
     gutter: 24, // px
     width: 72, // px
     span: 4, // cols
-    maxWidth: null,
+    maxWidth: null
   },
   tablet: {
     breakpoints: 480, // px
@@ -15,7 +15,7 @@ export default {
     gutter: 16, // px
     width: 72, // px
     span: 4, // cols
-    maxWidth: null,
+    maxWidth: null
   },
   phone: {
     breakpoints: 0, // px
@@ -24,6 +24,6 @@ export default {
     gutter: 16, // px
     width: 72, // px
     span: 4, // cols
-    maxWidth: null,
-  },
-};
+    maxWidth: null
+  }
+}
