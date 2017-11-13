@@ -21,7 +21,8 @@ class index extends Component {
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Encode+Sans:400,900' key='google-font-family-Encode-Sans-400-900' />
         </Head>
         <Nav></Nav>
-        <Container maxWidth={'1024px'}>
+
+        <Container>
           <Row>
             <Cell phone={4} tablet={8} desktop={12}>
               <div className='hero'>
@@ -31,7 +32,8 @@ class index extends Component {
             </Cell>
           </Row>
         </Container>
-        <Container>
+
+        <Container className='demo-container'>
           <Row className='demo-row'>
             <Cell className='demo-cell'>
               Col span 4
@@ -40,7 +42,7 @@ class index extends Component {
               Col span 4
             </Cell>
             <Cell className='demo-cell' tablet={8}>
-              Col span 4
+              Col span default + tablet 8
             </Cell>
           </Row>
         </Container>
@@ -52,7 +54,7 @@ class index extends Component {
             </Cell>
           </Row>
         </Container>
-        <Container maxWidth={'1024px'} align={'left'}>
+        <Container maxWidth={'1024px'} align={'left'} className='demo-container'>
           <Row className='demo-row'>
             <Cell className='demo-cell'>
               Col span default
@@ -61,7 +63,7 @@ class index extends Component {
               Col span default
             </Cell>
             <Cell className='demo-cell' tablet={8}>
-              Col span default
+              Col span default + tablet 8
             </Cell>
           </Row>
         </Container>
@@ -73,7 +75,7 @@ class index extends Component {
             </Cell>
           </Row>
         </Container>
-        <Container maxWidth={'1024px'}>
+        <Container maxWidth={'1024px'} className='demo-container'>
           <Row className='demo-row'>
             <Cell className='demo-cell'>
               Col span default
@@ -82,7 +84,7 @@ class index extends Component {
               Col span default
             </Cell>
             <Cell className='demo-cell' tablet={8}>
-              Col span default
+              Col span default + tablet 8
             </Cell>
           </Row>
         </Container>
@@ -94,7 +96,7 @@ class index extends Component {
             </Cell>
           </Row>
         </Container>
-        <Container maxWidth={'1024px'} align={'right'}>
+        <Container maxWidth={'1024px'} align={'right'} className='demo-container'>
           <Row className='demo-row'>
             <Cell className='demo-cell'>
               Col span default
@@ -103,10 +105,11 @@ class index extends Component {
               Col span default
             </Cell>
             <Cell className='demo-cell' tablet={8}>
-              Col span default
+              Col span default + tablet 8
             </Cell>
           </Row>
         </Container>
+
         <style jsx global>{styleGlobal}</style>
         <style jsx>{`
 
@@ -114,8 +117,11 @@ class index extends Component {
             text-align: center;
           }
 
+          div.demo-page :global(.demo-container) {
+            background-color: rgba(0, 0, 0, .1);
+          }
+
           div.demo-page :global(.demo-row) {
-            padding: 8px;
             background-color: rgba(0, 0, 0, .1);
           }
 
