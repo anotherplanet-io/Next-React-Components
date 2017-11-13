@@ -39,7 +39,7 @@ class index extends Component {
               Components
             </Cell>
             <Cell>
-              <Link href={'../ap-grid-layout'}><a>AP Grid Layout</a></Link>
+              <Link href='/ap-grid-layout'><a>AP Grid Layout</a></Link>
             </Cell>
           </Row>
         </Container>
