@@ -8,7 +8,6 @@ import Nav from '../components/nav'
 // local
 import styleGlobal from './style'
 
-
 class index extends Component {
   static async getInitialProps ({ req }) {
     return {}

@@ -11,6 +11,7 @@ module.exports = {
       "/ap-grid-layout": { page: "/ap-grid-layout" },
     }
   },
+  assetPrefix: !debug ? 'https://anotherplanet-io.github.io/Next-React-Components/' : '',
   /* webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');
