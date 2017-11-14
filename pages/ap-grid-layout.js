@@ -3,13 +3,14 @@ import Link from 'next/link'
 import Head from 'next/head'
 // packages
 import { Container, Row, Cell } from '../packages/ap-layout-grid'
+import { Highlight } from '../packages/ap-highlight'
 // components
 import Nav from '../components/nav'
 // local
 import styleGlobal from './style'
 
 
-class index extends Component {
+export default class extends Component {
   static async getInitialProps ({ req }) {
     return {}
   }
@@ -27,11 +28,14 @@ class index extends Component {
             <Cell phone={4} tablet={8} desktop={12}>
               <div className='hero'>
                 <h1>Layout Grid</h1>
-                <p>Grid of default wide (4 columns) items</p>
               </div>
+              <p>Grid of default wide (4 columns) items</p>
+              <p>Responsive UI is based on a column-variate grid layout. It has 4 columns on phone, 8 columns on tablet and 12 columns on desktop.</p>
+              <p>This columns variable grid is more powerful than the regular 12 columns layout grid.</p>
             </Cell>
           </Row>
         </Container>
+
 
         <Container className='demo-container'>
           <Row className='demo-row'>
@@ -50,6 +54,31 @@ class index extends Component {
         <Container>
           <Row>
             <Cell phone={4} tablet={8} desktop={12}>
+              <div className='code'>
+                <Highlight language='javascript' src={`
+<Container className='demo-container'>
+  <Row className='demo-row'>
+    <Cell className='demo-cell'>
+      Col span 4
+    </Cell>
+    <Cell className='demo-cell'>
+      Col span 4
+    </Cell>
+    <Cell className='demo-cell' tablet={8}>
+      Col span default + tablet 8
+    </Cell>
+  </Row>
+</Container>
+                `}></Highlight>
+              </div>
+            </Cell>
+          </Row>
+        </Container>
+
+
+        <Container>
+          <Row>
+            <Cell phone={4} tablet={8} desktop={12}>
               <p>Grid max width 1024px align left </p>
             </Cell>
           </Row>
@@ -64,6 +93,20 @@ class index extends Component {
             </Cell>
             <Cell className='demo-cell' tablet={8}>
               Col span default + tablet 8
+            </Cell>
+          </Row>
+        </Container>
+
+        <Container>
+          <Row>
+            <Cell phone={4} tablet={8} desktop={12}>
+              <div className='code'>
+                <Highlight language='javascript' src={`
+<Container maxWidth={'1024px'} align={'left'}>
+  …
+</Container>
+                `}></Highlight>
+              </div>
             </Cell>
           </Row>
         </Container>
@@ -92,6 +135,20 @@ class index extends Component {
         <Container>
           <Row>
             <Cell phone={4} tablet={8} desktop={12}>
+              <div className='code'>
+                <Highlight language='javascript' src={`
+<Container maxWidth={'1024px'}>
+  …
+</Container>
+                `}></Highlight>
+              </div>
+            </Cell>
+          </Row>
+        </Container>
+
+        <Container>
+          <Row>
+            <Cell phone={4} tablet={8} desktop={12}>
               <p>Grid max width 1024px align right</p>
             </Cell>
           </Row>
@@ -110,11 +167,26 @@ class index extends Component {
           </Row>
         </Container>
 
+        <Container>
+          <Row>
+            <Cell phone={4} tablet={8} desktop={12}>
+              <div className='code'>
+                <Highlight language='javascript' src={`
+<Container maxWidth={'1024px'} align={'right'}>
+  …
+</Container>
+                `}></Highlight>
+              </div>
+            </Cell>
+          </Row>
+        </Container>
+
         <style jsx global>{styleGlobal}</style>
         <style jsx>{`
 
           .hero {
             text-align: center;
+            margin-bottom: 24px;
           }
 
           div.demo-page :global(.demo-container) {
@@ -135,5 +207,3 @@ class index extends Component {
     )
   }
 }
-
-export default index

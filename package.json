@@ -25,6 +25,7 @@
   "homepage": "https://github.com/anotherplanet-io/Next-React-Components#readme",
   "dependencies": {
     "deepmerge": "^2.0.1",
+    "highlight.js": "^9.12.0",
     "next": "^4.1.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

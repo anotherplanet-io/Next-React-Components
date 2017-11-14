@@ -2,6 +2,42 @@ import React from 'react'
 import Link from 'next/link'
 
 export default () => <nav>
-  <span><Link href='/index'><a>Home</a></Link></span> 
-  <span><Link href='/ap-grid-layout'><a>Grid Layout</a></Link></span>
+  <div className='title'><Link href='/index'><a>[AP] COMPONENTS FOR NEXT.JS</a></Link></div>
+  <div className="menu">
+    <span><Link href='/index'><a>Components</a></Link></span>
+    <span><Link href='/ap-grid-layout'><a>About</a></Link></span>
+  </div>
+  <style jsx>{`
+    nav {
+      height: 56px;
+      background-color: black;
+      color: white;
+      overflow: hidden;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      line-height: 24px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    nav > div {
+      padding: 16px;
+    }
+
+    .title {
+      float: left;
+    }
+
+    .menu {
+      float: right;
+    }
+
+    .menu span {
+      padding: 0 0.5em;
+    }
+
+  `}</style>
 </nav>
