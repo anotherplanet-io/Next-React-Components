@@ -25,8 +25,12 @@ class index extends Component {
           <Row>
             <Cell phone={4} tablet={8} desktop={12}>
               <h1>Another Planet Components</h1>
-              <p>Another Planet Next.js React Components Version 1.0.0</p>
+              <h2>A design system made for Next.js</h2>
+              <p className='note'>Another Planet Next.js React Components Version 1.0.0</p>
+              <p>Another Planet components for Next.js and React let you create attractive, reusable user interface elements allowing you to construct your experience with ease.</p>
+              <p>This components greatly simplify the task of creating clear, well-designed, responsive experiences.</p>
               <p>This project is a collection of small components for <a href='https://github.com/zeit/next.js'>Next.js.</a></p>
+              <p>All components are accessible, cross-browser compatible and support theme customization (SOON).</p>
 
               <h2>CSS-in-JS</h2>
               <p>CSS-in-JS libraries let you write your styles in JavaScript. The Javascript inject a string of CSS in a <i>style</i> tag into the DOM.</p>
@@ -45,13 +49,15 @@ class index extends Component {
               <ul>
                 <li><Link href='/ap-grid-layout'><a>Grid Layout</a></Link></li>
                 <li><Link href='/ap-highlight'><a>React Highlight.js</a></Link></li>
+                <li><Link href=''><a>Theme customization(SOON)</a></Link></li>
                 <li><Link href=''><a>Typography (SOON)</a></Link></li>
+                <li><Link href=''><a>Colors (SOON)</a></Link></li>
                 <li><Link href=''><a>List (SOON)</a></Link></li>
                 <li><Link href=''><a>Dialog (SOON)</a></Link></li>
-                <li><Link href=''><a>Theme colors (SOON)</a></Link></li>
                 <li><Link href=''><a>Pop over menus (SOON)</a></Link></li>
                 <li><Link href=''><a>Card (SOON)</a></Link></li>
                 <li><Link href=''><a>Icons (SOON)</a></Link></li>
+                <li><Link href=''><a>Modal (SOON)</a></Link></li>
               </ul>
 
             </Cell>
