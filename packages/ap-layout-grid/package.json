@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anotherplanet-io/Next-React-Components/tree/master/packages/ap-layout-grid"
+    "url": "git+https://github.com/anotherplanet-io/Next-React-Components.git"
   },
   "keywords": [
     "column",
