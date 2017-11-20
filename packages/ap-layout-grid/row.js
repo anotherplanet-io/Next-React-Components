@@ -1,3 +1,4 @@
+import React from 'react'
 import theme from './default-theme'
 import merge from 'deepmerge'
 

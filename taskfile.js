@@ -3,7 +3,7 @@ const childProcess = require('child_process')
 const isWindows = /^win/.test(process.platform)
 
 export async function lib (task, opts) {
-  await task.source(opts.src || 'packages/**/*.js').babel().target('dist/lib')
+  await task.source(opts.src || 'packages/**/*.js').babel().target('lib')
   notify('Compiled lib files')
 }
 
