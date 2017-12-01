@@ -4,10 +4,9 @@ import Head from 'next/head'
 // packages
 import { Container, Row, Cell } from '../packages/ap-layout-grid'
 import { Highlight } from '../packages/ap-highlight'
+import { colors } from '../packages/ap-themes'
 // components
 import Nav from '../components/nav'
-// local
-import styleGlobal from './style'
 
 
 export default class extends Component {
@@ -181,7 +180,12 @@ export default class extends Component {
           </Row>
         </Container>
 
-        <style jsx global>{styleGlobal}</style>
+        <style jsx global>{`
+          body, html {
+            font-family: 'Encode Sans', sans-serif;
+            background-color: ${colors['backgroundColor']};
+          }
+        `}</style>
         <style jsx>{`
 
           .hero {

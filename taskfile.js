@@ -2,13 +2,13 @@ const notifier = require('node-notifier')
 const childProcess = require('child_process')
 const isWindows = /^win/.test(process.platform)
 
-export async function lib (task, opts) {
-  await task.source(opts.src || 'packages/**/*.js').babel().target('lib')
-  notify('Compiled lib files')
+export async function bin (task, opts) {
+  await task.source(opts.src || 'bin/*').babel().target('dist/bin', {mode: '0755'})
+  notify('Compiled binaries')
 }
 
 export default async function (task) {
-  await task.start('lib')
+  await task.start('bin')
 }
 
 // notification helper

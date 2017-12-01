@@ -1,4 +1,3 @@
-import React from 'react'
 import theme from './default-theme'
 import merge from 'deepmerge'
 
@@ -54,6 +53,7 @@ export default ({children, grid = {}, ...props}) => {
               grid-template-columns: repeat(${g.desktop.columns}, minmax(0, 1fr));
             }
           }
+
         }
 
       `}</style>

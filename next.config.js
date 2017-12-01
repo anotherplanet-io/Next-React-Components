@@ -9,6 +9,7 @@ module.exports = {
     return {
       "/": { page: "/" },
       "/ap-grid-layout": { page: "/ap-grid-layout" },
+      "/ap-highlight": { page: "/ap-highlight" },
     }
   },
   assetPrefix: !debug ? 'https://anotherplanet-io.github.io/Next-React-Components/' : '',

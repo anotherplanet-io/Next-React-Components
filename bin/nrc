@@ -1,0 +1,57 @@
+#!/usr/bin/env node
+
+import { join, resolve } from 'path'
+import { spawn } from 'cross-spawn'
+import { watchFile } from 'fs'
+import pkg from '../../package.json'
+
+// peerDependencies
+if (pkg.peerDependencies) {
+  Object.keys(pkg.peerDependencies).forEach(dependency => {
+    try {
+      // When 'npm link' is used it checks the clone location. Not the project.
+      require.resolve(dependency)
+    } catch (err) {
+      console.warn(`The module '${dependency}' was not found. Next React Components requires that you include it in 'dependencies' of your 'package.json'. To add it, run 'npm install --save ${dependency}'`)
+    }
+  })
+}
+
+const defaultCommand = 'install'
+const commands = new Set([
+  'remove',
+  'update',
+  'list',
+  'export',
+  'publish',
+  defaultCommand
+])
+
+let cmd = process.argv[2]
+let args
+
+if (new Set(['--version', '-v']).has(cmd)) {
+  console.log(`Next React Components v${pkg.version}`)
+  process.exit(0)
+}
+
+if (new Set(['--help', '-h']).has(cmd)) {
+  console.log(`
+    Usage
+      $ nrc <command>
+    Available commands
+      ${Array.from(commands).join(', ')}
+    For more information run a command with the --help flag
+      $ nrc install --help
+  `)
+  process.exit(0)
+}
+
+if (commands.has(cmd)) {
+  args = process.argv.slice(3)
+} else {
+  cmd = defaultCommand
+  args = process.argv.slice(2)
+}
+
+console.log(`cmd: ${cmd}, args: ${args}`);
