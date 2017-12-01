@@ -23,8 +23,14 @@ class index extends Component {
         <Container>
           <Row>
             <Cell phone={4} tablet={8} desktop={12}>
-              <h1>Another Planet Components</h1>
-              <h2>A design system made for Next.js</h2>
+
+              <div className={'hero'}>
+                <h1>Another Planet Components</h1>
+                <h2>A design system made for Next.js</h2>
+                <p>{ process.env.BACKEND_URL }</p>
+                <p>This project is currently at an early stage of development.</p>
+              </div>
+
               <p className='note'>Another Planet Next.js React Components Version 1.0.0</p>
               <p>Another Planet components for Next.js and React let you create attractive, reusable user interface elements allowing you to construct your experience with ease.</p>
               <p>This components greatly simplify the task of creating clear, well-designed, responsive experiences.</p>
@@ -40,10 +46,6 @@ class index extends Component {
               <p>No CSS dependencies</p>
               <p>Server-Side Rendering ready</p>
               <p>Use cool technologie like Next.js, React and <a href='https://github.com/zeit/styled-jsx'>styled-jsx</a></p>
-
-              <h3>Note</h3>
-              <p>This project is currently at an early stage of development.</p>
-              <p>{ process.env.BACKEND_URL }</p>
 
               <img src={ process.env.BACKEND_URL + '/static/screenshot/next-js-grid-system.png' }/>
 
@@ -62,6 +64,9 @@ class index extends Component {
                 <li><Link href=''><a>Modal (SOON)</a></Link></li>
               </ul>
 
+              <h3>In production</h3>
+              <p><Link href='https://www.anotherplanet.io/'><a>https://www.anotherplanet.io/</a></Link></p>
+
             </Cell>
           </Row>
         </Container>
@@ -74,8 +79,10 @@ class index extends Component {
         `}</style>
 
         <style jsx>{`
-          h1 {
+          .hero {
             text-align: center;
+          }
+          .hero h1 {
             text-transform: uppercase;
           }
         `}</style>
