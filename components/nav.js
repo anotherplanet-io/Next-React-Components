@@ -2,10 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 
 export default () => <nav>
-  <div className='title'><Link href='/'><a>[AP] COMPONENTS FOR NEXT.JS</a></Link></div>
+  <div className='title'><Link href={ process.env.BACKEND_URL + '/' }><a>[AP] COMPONENTS FOR NEXT.JS</a></Link></div>
   <div className="menu">
-    <span><Link href='/'><a>Components</a></Link></span>
-    <span><Link href='/ap-grid-layout'><a>About</a></Link></span>
+    <span><Link href={ process.env.BACKEND_URL + '/' }><a>Components</a></Link></span>
+    <span><Link href={ process.env.BACKEND_URL + '/ap-grid-layout' }><a>About</a></Link></span>
   </div>
   <style jsx>{`
     nav {

@@ -17,8 +17,8 @@
     "test": "ava",
     "lint": "standard 'packages/**/*.js' 'pages/**/*.js'",
     "fix": "standard --fix 'packages/**/*.js' 'pages/**/*.js'",
-    "serve": "next build && next export && http-server out",
-    "deploy": "next build && next export && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "serve": "rm -rf node_modules/.cache && NODE_ENV=development next build && next export && http-server out",
+    "deploy": "rm -rf node_modules/.cache && next build && next export && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "repository": {
     "type": "git",
@@ -44,6 +44,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-define": "^1.3.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",

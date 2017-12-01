@@ -43,11 +43,14 @@ class index extends Component {
 
               <h3>Note</h3>
               <p>This project is currently at an early stage of development.</p>
+              <p>{ process.env.BACKEND_URL }</p>
+
+              <img src={ process.env.BACKEND_URL + '/static/screenshot/next-js-grid-system.png' }/>
 
               <h3>Components</h3>
               <ul>
-                <li><Link href='/ap-grid-layout'><a>Grid Layout</a></Link></li>
-                <li><Link href='/ap-highlight'><a>React Highlight.js</a></Link></li>
+                <li><Link href={ process.env.BACKEND_URL + '/ap-grid-layout' }><a>Grid Layout</a></Link></li>
+                <li><Link href={ process.env.BACKEND_URL + '/ap-highlight' }><a>React Highlight.js</a></Link></li>
                 <li><Link href=''><a>Theme customization(SOON)</a></Link></li>
                 <li><Link href=''><a>Typography (SOON)</a></Link></li>
                 <li><Link href=''><a>Colors (SOON)</a></Link></li>
@@ -62,7 +65,7 @@ class index extends Component {
             </Cell>
           </Row>
         </Container>
-        
+
         <style jsx global>{`
           body, html {
             font-family: 'Encode Sans', sans-serif;
