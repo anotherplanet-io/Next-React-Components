@@ -27,9 +27,11 @@ class index extends Component {
               <div className={'hero'}>
                 <h1>Another Planet Components</h1>
                 <h2>A design system made for Next.js</h2>
-                <p>{ process.env.BACKEND_URL }</p>
-                <p>This project is currently at an early stage of development.</p>
+                <p>Warning: This project is currently at an early stage of development.</p>
+                <p><Link href='https://github.com/anotherplanet-io/Next-React-Components'><a>Github</a></Link></p>
               </div>
+
+              <p>Share: <Link href='{ process.env.BACKEND_URL }'><a>{ process.env.BACKEND_URL }</a></Link></p>
 
               <p className='note'>Another Planet Next.js React Components Version 1.0.0</p>
               <p>Another Planet components for Next.js and React let you create attractive, reusable user interface elements allowing you to construct your experience with ease.</p>
