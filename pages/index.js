@@ -7,7 +7,6 @@ import { colors } from '../packages/ap-themes'
 // components
 import Nav from '../components/nav'
 // local
-import styleGlobal from './style'
 
 class index extends Component {
   static async getInitialProps ({ req }) {
@@ -63,13 +62,19 @@ class index extends Component {
             </Cell>
           </Row>
         </Container>
-        <style jsx global>{styleGlobal}</style>
+        
+        <style jsx global>{`
+          body, html {
+            font-family: 'Encode Sans', sans-serif;
+            background-color: ${colors['backgroundColor']};
+          }
+        `}</style>
+
         <style jsx>{`
           h1 {
             text-align: center;
             text-transform: uppercase;
           }
-
         `}</style>
       </div>
     )
