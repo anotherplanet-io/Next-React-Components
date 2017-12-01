@@ -14,9 +14,9 @@ module.exports = {
       }
     }
     return {
-      "/Next-React-Components/": { page: "/" },
-      "/Next-React-Components/ap-grid-layout": { page: "/ap-grid-layout" },
-      "/Next-React-Components/ap-highlight": { page: "/ap-highlight" },
+      "/": { page: "/Next-React-Components/" },
+      "/ap-grid-layout": { page: "/Next-React-Components/ap-grid-layout" },
+      "/ap-highlight": { page: "/Next-React-Components/ap-highlight" },
     }
   },
   assetPrefix: !debug ? 'https://anotherplanet-io.github.io/Next-React-Components/' : '',
