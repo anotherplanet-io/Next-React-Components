@@ -6,17 +6,10 @@ const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
   exportPathMap: function () {
-    if (debug) {
-      return {
-        "/": { page: "/" },
-        "/ap-grid-layout": { page: "/ap-grid-layout" },
-        "/ap-highlight": { page: "/ap-highlight" },
-      }
-    }
     return {
-      "/Next-React-Components/": { page: "/" },
-      "/Next-React-Components/ap-grid-layout": { page: "/ap-grid-layout" },
-      "/Next-React-Components/ap-highlight": { page: "/ap-highlight" },
+      "/": { page: "/" },
+      "/ap-grid-layout": { page: "/ap-grid-layout" },
+      "/ap-highlight": { page: "/ap-highlight" },
     }
   },
   assetPrefix: !debug ? 'https://anotherplanet-io.github.io/Next-React-Components/' : '',
