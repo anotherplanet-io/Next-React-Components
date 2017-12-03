@@ -31,8 +31,6 @@ class index extends Component {
                 <p><Link href='https://github.com/anotherplanet-io/Next-React-Components'><a>Github</a></Link></p>
               </div>
 
-              <p>Share: <Link href={ process.env.BACKEND_URL }><a>{ process.env.BACKEND_URL }</a></Link></p>
-
               <p className='note'>Another Planet Next.js React Components Version 1.0.0</p>
               <p>Another Planet components for Next.js and React let you create attractive, reusable user interface elements allowing you to construct your experience with ease.</p>
               <p>This components greatly simplify the task of creating clear, well-designed, responsive experiences.</p>
