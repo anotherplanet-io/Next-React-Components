@@ -5,7 +5,7 @@
 const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
-  exportPathMap: function () {
+  exportPathMap: function () { // /Next-React-Components
     return {
       "/": { page: "/" },
       "/ap-grid-layout": { page: "/ap-grid-layout" },

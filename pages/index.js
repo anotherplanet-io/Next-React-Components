@@ -17,6 +17,7 @@ class index extends Component {
     return (
       <div>
         <Head>
+          { (process.env.BACKEND_URL !=  '') ? `<base href="${process.env.BACKEND_URL}" />` : ''}
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Encode+Sans:400,900' key='google-font-family-Encode-Sans-400-900' />
         </Head>
         <Nav></Nav>
@@ -49,12 +50,12 @@ class index extends Component {
               <p>Server-Side Rendering ready</p>
               <p>Use cool technologie like Next.js, React and <a href='https://github.com/zeit/styled-jsx'>styled-jsx</a></p>
 
-              <img src={ process.env.BACKEND_URL + '/static/screenshot/next-js-grid-system.png' }/>
+              <img src={ './static/screenshot/next-js-grid-system.png' }/>
 
               <h3>Components</h3>
               <ul>
-                <li><Link href={ process.env.BACKEND_URL + '/ap-grid-layout' }><a>Grid Layout</a></Link></li>
-                <li><Link href={ process.env.BACKEND_URL + '/ap-highlight' }><a>React Highlight.js</a></Link></li>
+                <li><Link href={ './ap-grid-layout' }><a>Grid Layout</a></Link></li>
+                <li><Link href={ './ap-highlight' }><a>React Highlight.js</a></Link></li>
                 <li><Link href=''><a>Theme customization(SOON)</a></Link></li>
                 <li><Link href=''><a>Typography (SOON)</a></Link></li>
                 <li><Link href=''><a>Colors (SOON)</a></Link></li>

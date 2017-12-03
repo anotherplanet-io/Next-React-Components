@@ -18,6 +18,7 @@ export default class extends Component {
     return (
       <div className={'demo-page'}>
         <Head>
+          { (process.env.BACKEND_URL !=  '') ? `<base href="${process.env.BACKEND_URL}" />` : ''}
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Encode+Sans:400,900' key='google-font-family-Encode-Sans-400-900' />
         </Head>
         <Nav></Nav>
