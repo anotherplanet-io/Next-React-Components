@@ -54,8 +54,8 @@ class index extends Component {
 
               <h3>Components</h3>
               <ul>
-                <li><Link href={ './ap-grid-layout' }><a>Grid Layout</a></Link></li>
-                <li><Link href={ './ap-highlight' }><a>React Highlight.js</a></Link></li>
+                <li><Link href={ '/ap-grid-layout' }><a>Grid Layout</a></Link></li>
+                <li><Link href={ '/ap-highlight' }><a>React Highlight.js</a></Link></li>
                 <li><Link href=''><a>Theme customization(SOON)</a></Link></li>
                 <li><Link href=''><a>Typography (SOON)</a></Link></li>
                 <li><Link href=''><a>Colors (SOON)</a></Link></li>

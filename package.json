@@ -17,7 +17,6 @@
     "test": "ava",
     "lint": "standard 'packages/**/*.js' 'pages/**/*.js'",
     "fix": "standard --fix 'packages/**/*.js' 'pages/**/*.js'",
-    "serve": "rm -rf node_modules/.cache && NODE_ENV=development next build && next export && http-server out",
     "deploy": "rm -rf node_modules/.cache && next build && next export && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "repository": {
