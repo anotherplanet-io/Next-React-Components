@@ -1,33 +1,17 @@
 #!/usr/bin/env node
-'use strict';
+import _Array$from from 'babel-runtime/core-js/array/from';
+import _Set from 'babel-runtime/core-js/set';
+import _Object$keys from 'babel-runtime/core-js/object/keys';
 
-var _from = require('babel-runtime/core-js/array/from');
 
-var _from2 = _interopRequireDefault(_from);
-
-var _set = require('babel-runtime/core-js/set');
-
-var _set2 = _interopRequireDefault(_set);
-
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _path = require('path');
-
-var _crossSpawn = require('cross-spawn');
-
-var _fs = require('fs');
-
-var _package = require('../../package.json');
-
-var _package2 = _interopRequireDefault(_package);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import { join, resolve } from 'path';
+import { spawn } from 'cross-spawn';
+import { watchFile } from 'fs';
+import pkg from '../../package.json';
 
 // peerDependencies
-if (_package2.default.peerDependencies) {
-  (0, _keys2.default)(_package2.default.peerDependencies).forEach(function (dependency) {
+if (pkg.peerDependencies) {
+  _Object$keys(pkg.peerDependencies).forEach(function (dependency) {
     try {
       // When 'npm link' is used it checks the clone location. Not the project.
       require.resolve(dependency);
@@ -38,18 +22,18 @@ if (_package2.default.peerDependencies) {
 }
 
 var defaultCommand = 'install';
-var commands = new _set2.default(['remove', 'update', 'test', 'export', 'publish', defaultCommand]);
+var commands = new _Set(['remove', 'update', 'list', 'export', 'publish', defaultCommand]);
 
 var cmd = process.argv[2];
 var args = void 0;
 
-if (new _set2.default(['--version', '-v']).has(cmd)) {
-  console.log('Next React Components v' + _package2.default.version);
+if (new _Set(['--version', '-v']).has(cmd)) {
+  console.log('Next React Components v' + pkg.version);
   process.exit(0);
 }
 
-if (new _set2.default(['--help', '-h']).has(cmd)) {
-  console.log('\n    Usage\n      $ nrc <command>\n    Available commands\n      ' + (0, _from2.default)(commands).join(', ') + '\n    For more information run a command with the --help flag\n      $ nrc install --help\n  ');
+if (new _Set(['--help', '-h']).has(cmd)) {
+  console.log('\n    Usage\n      $ nrc <command>\n    Available commands\n      ' + _Array$from(commands).join(', ') + '\n    For more information run a command with the --help flag\n      $ nrc install --help\n  ');
   process.exit(0);
 }
 
