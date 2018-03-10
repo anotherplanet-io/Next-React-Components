@@ -112,6 +112,7 @@ export default ({children = {}, theme = {}, phone = null, tablet = null, desktop
               grid-column-end: span ${g.desktop.span};
             }
           }
+
         }
 
       `}</style>
